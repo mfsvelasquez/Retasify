@@ -1,0 +1,65 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Retas" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryVariant">@color/green</item>
+        <item name="android:statusBarColor">@color/green</item>
+    </style>
+
+    <style name="Theme.Retas" parent="Base.Theme.Retas" />
+
+    <style name="App.Custom.Indication" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/yellow</item>
+    </style>
+
+    <!-- Style for the circular profile picture -->
+    <style name="CircleImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Text appearance for the InterestChip -->
+    <style name="TextAppearance.App.InterestChip" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/main_text_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Container style for the InterestChip -->
+    <style name="InterestChip" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipBackgroundColor">@android:color/transparent</item>
+        <item name="chipStrokeColor">#F7C44E</item>
+        <item name="chipStrokeWidth">2dp</item>
+        <item name="chipCornerRadius">20dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.InterestChip</item>
+    </style>
+
+    <!-- Style for Circular FAB -->
+    <style name="CircularFab" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Text appearance for Bottom Navigation -->
+    <style name="App.TextAppearance.BottomNav.Regular" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- Style for Cards with top-rounded corners -->
+    <style name="TopRoundedCard" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.App.MediumComponent.TopRounded</item>
+    </style>
+
+    <!-- Shape definition for top-rounded corners -->
+    <style name="ShapeAppearance.App.MediumComponent.TopRounded" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+</resources>

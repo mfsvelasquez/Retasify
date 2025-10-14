@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/upcycle"
+        android:title="Upcycle"
+        android:icon="@drawable/upcycle"/>
+
+    <item
+        android:id="@+id/donate"
+        android:title="Donate"
+        android:icon="@drawable/donate"/>
+
+    <item
+        android:id="@+id/dashboard"
+        android:title="Dashboard"
+        android:icon="@drawable/dashboard"/>
+
+    <item
+        android:id="@+id/bear"
+        android:title="Bear"
+        android:icon="@drawable/bear"/>
+
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/profile"/>
+
+</menu>
