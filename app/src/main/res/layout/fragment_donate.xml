@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DonateFragment">
+    android:background="#FAF5EF"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_box"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:elevation="4dp">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Have extra clothes? Let's donate it!"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How's your clothes doing?"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:weightSum="4">
+
+            <ImageView
+                android:id="@+id/emojiGreat"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:src="@drawable/great"
+                android:contentDescription="Happy face"/>
+
+            <ImageView
+                android:id="@+id/emojiGood"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:src="@drawable/good"
+                android:contentDescription="Neutral face"/>
+
+            <ImageView
+                android:id="@+id/emojiOkay"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:src="@drawable/notbad"
+                android:contentDescription="Indifferent face"/>
+
+            <ImageView
+                android:id="@+id/emojiBad"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:src="@drawable/sad"
+                android:contentDescription="Sad face"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
