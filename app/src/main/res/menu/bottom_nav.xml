@@ -4,26 +4,31 @@
     <item
         android:id="@+id/upcycle"
         android:title="Upcycle"
-        android:icon="@drawable/upcycle"/>
+        android:icon="@drawable/upcycle"
+        android:fontFamily="@font/montserrat_bold"/>
 
     <item
         android:id="@+id/donate"
         android:title="Donate"
-        android:icon="@drawable/donate"/>
+        android:icon="@drawable/donate"
+        android:fontFamily="@font/montserrat_bold"/>
 
     <item
         android:id="@+id/dashboard"
         android:title="Dashboard"
-        android:icon="@drawable/dashboard"/>
+        android:icon="@drawable/dashboard"
+        android:fontFamily="@font/montserrat_bold"/>
 
     <item
         android:id="@+id/bear"
         android:title="Bear"
-        android:icon="@drawable/bear"/>
+        android:icon="@drawable/bear"
+        android:fontFamily="@font/montserrat_bold"/>
 
     <item
         android:id="@+id/profile"
         android:title="Profile"
-        android:icon="@drawable/profile"/>
+        android:icon="@drawable/profile"
+        android:fontFamily="@font/montserrat_bold"/>
 
 </menu>

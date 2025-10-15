@@ -68,7 +68,7 @@
     </style>
 
     <style name="BottomNavTextStyle" parent="TextAppearance.MaterialComponents.Caption">
-        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
 
 
