@@ -1,14 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpcycleFragment">
+    android:background="#48583B"
+    tools:context=".UpcycleActivity">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.card.MaterialCardView
+        style="@style/TopRoundedCard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="100dp"
+        app:cardBackgroundColor="#FEF7F1"
+        app:cardElevation="0dp">
 
-</FrameLayout>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="100dp">
+
+                <TextView
+                    android:id="@+id/title_choose_partners"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Choose your"
+                    android:textColor="#48583B"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/title_upcycling_partners"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Upcycling Partners!"
+                    android:textColor="#F7C44E"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_choose_partners"
+                    android:layout_marginTop="-15dp"/>
+
+                <TextView
+                    android:id="@+id/subtitle_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-5dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Have extra clothes? Let's give it a second chance!"
+                    android:textColor="#8D8268"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_upcycling_partners" />
+
+                <TextView
+                    android:id="@+id/title_local_communities"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Local Communities"
+                    android:textColor="#48583B"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subtitle_text" />
+
+                <GridLayout
+                    android:id="@+id/grid_local_communities"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="5dp"
+                    android:columnCount="3"
+                    android:useDefaultMargins="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_local_communities">
+
+                    <ImageView
+                        style="@style/PartnerLogo"
+                        tools:src="@drawable/logo_community" />
+
+                    <ImageView
+                        style="@style/PartnerLogo"
+                        tools:src="@drawable/logo_good_neighbors" />
+
+                    <ImageView
+                        style="@style/PartnerLogo"
+                        tools:src="@drawable/logo_kultura" />
+
+                    <ImageView
+                        style="@style/PartnerLogo"
+                        tools:src="@drawable/logo_community" />
+
+                    <ImageView
+                        style="@style/PartnerLogo"
+                        tools:src="@drawable/logo_good_neighbors" />
+
+                    <ImageView
+                        style="@style/PartnerLogo"
+                        tools:src="@drawable/logo_kultura" />
+                </GridLayout>
+
+                <TextView
+                    android:id="@+id/text_see_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="See More"
+                    android:textColor="#8D8268"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/grid_local_communities" />
+
+                <TextView
+                    android:id="@+id/title_companies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Companies"
+                    android:textColor="#48583B"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_see_more" />
+
+                <GridLayout
+                    android:id="@+id/grid_companies"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="5dp"
+                    android:columnCount="3"
+                    android:useDefaultMargins="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_companies">
+
+                    <ImageView
+                        style="@style/PartnerLogo"
+                        tools:src="@drawable/logo_candle" />
+
+                    <ImageView
+                        style="@style/PartnerLogo"
+                        tools:src="@drawable/logo_muni" />
+
+                    <ImageView
+                        style="@style/PartnerLogo"
+                        tools:src="@drawable/logo_maison" />
+
+                </GridLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
