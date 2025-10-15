@@ -36,24 +36,20 @@
         <item name="android:textAppearance">@style/TextAppearance.App.InterestChip</item>
     </style>
 
-    <!-- Style for Circular FAB -->
     <style name="CircularFab" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
 
-    <!-- Text appearance for Bottom Navigation -->
     <style name="App.TextAppearance.BottomNav.Regular" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:fontFamily">@font/montserrat_regular</item>
         <item name="android:textSize">12sp</item>
     </style>
 
-    <!-- Style for Cards with top-rounded corners -->
     <style name="TopRoundedCard" parent="Widget.MaterialComponents.CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance.App.MediumComponent.TopRounded</item>
     </style>
 
-    <!-- Shape definition for top-rounded corners -->
     <style name="ShapeAppearance.App.MediumComponent.TopRounded" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopLeft">40dp</item>
@@ -61,7 +57,6 @@
         <item name="cornerSizeBottomLeft">0dp</item>
         <item name="cornerSizeBottomRight">0dp</item>
     </style>
-    <!-- ... your other styles ... -->
 
     <style name="PartnerLogo" parent="">
         <item name="android:layout_width">0dp</item>
@@ -71,5 +66,11 @@
         <item name="android:background">@drawable/circular_logo_background</item>
         <item name="android:elevation">1dp</item>
     </style>
+
+    <style name="BottomNavTextStyle" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+
 
 </resources>

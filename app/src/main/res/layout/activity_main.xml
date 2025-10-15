@@ -25,6 +25,8 @@
         app:itemTextColor="@color/green"
         app:itemIconSize="25dp"
         app:itemActiveIndicatorStyle="@style/App.Custom.Indication"
-        app:labelVisibilityMode="labeled"/>
+        app:labelVisibilityMode="labeled"
+        app:itemTextAppearanceActive="@style/BottomNavTextStyle"
+        app:itemTextAppearanceInactive="@style/BottomNavTextStyle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

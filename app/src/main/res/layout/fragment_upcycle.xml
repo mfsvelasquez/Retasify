@@ -91,27 +91,27 @@
 
                     <ImageView
                         style="@style/PartnerLogo"
-                        tools:src="@drawable/logo_community" />
+                        android:src="@drawable/logo_community" />
 
                     <ImageView
                         style="@style/PartnerLogo"
-                        tools:src="@drawable/logo_good_neighbors" />
+                        android:src="@drawable/logo_good_neighbors" />
 
                     <ImageView
                         style="@style/PartnerLogo"
-                        tools:src="@drawable/logo_kultura" />
+                        android:src="@drawable/logo_kultura" />
 
                     <ImageView
                         style="@style/PartnerLogo"
-                        tools:src="@drawable/logo_community" />
+                        android:src="@drawable/logo_community" />
 
                     <ImageView
                         style="@style/PartnerLogo"
-                        tools:src="@drawable/logo_good_neighbors" />
+                        android:src="@drawable/logo_good_neighbors" />
 
                     <ImageView
                         style="@style/PartnerLogo"
-                        tools:src="@drawable/logo_kultura" />
+                        android:src="@drawable/logo_kultura" />
                 </GridLayout>
 
                 <TextView
@@ -154,15 +154,15 @@
 
                     <ImageView
                         style="@style/PartnerLogo"
-                        tools:src="@drawable/logo_candle" />
+                        android:src="@drawable/logo_candle" />
 
                     <ImageView
                         style="@style/PartnerLogo"
-                        tools:src="@drawable/logo_muni" />
+                        android:src="@drawable/logo_muni" />
 
                     <ImageView
                         style="@style/PartnerLogo"
-                        tools:src="@drawable/logo_maison" />
+                        android:src="@drawable/logo_maison" />
 
                 </GridLayout>
 

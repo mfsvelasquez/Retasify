@@ -8,8 +8,7 @@
     android:layout_height="match_parent"
     android:background="#FBF0EA"
     tools:context=".SplashActivity">
-
-    <!-- Line 1: Wear with Style -->
+    `
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -23,7 +22,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="300dp" />
 
-    <!-- Line 2: Style with Purpose -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
