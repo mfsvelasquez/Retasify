@@ -18,13 +18,5 @@ class DashboardFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val btnKnowFootprint = view.findViewById<TextView>(R.id.btnKnowFootprint)
-        btnKnowFootprint.setOnClickListener {
-            val intent = Intent(requireContext(), FashionCalculatorActivity::class.java)
-            startActivity(intent)
-        }
-    }
 }
+
