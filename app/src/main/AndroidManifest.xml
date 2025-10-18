@@ -40,6 +40,12 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+        <activity android:name=".FashionCalculatorActivity" />
+
+
+        <activity
+            android:name=".ResultActivity" />
+
     </application>
 
 </manifest>

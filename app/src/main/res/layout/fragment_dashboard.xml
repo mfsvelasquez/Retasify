@@ -8,6 +8,8 @@
     android:background="#48583B"
     tools:context=".DashboardFragment">
 
+    <!-- Welcome Text Block -->
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/rounded_box"
         style="@style/TopRoundedCard"
@@ -18,8 +20,10 @@
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -240,6 +244,7 @@
                         android:padding="12dp">
 
                         <TextView
+                            android:id="@+id/btnKnowFootprint"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
@@ -248,11 +253,14 @@
                             android:text="Know the Change, Know your Fashion Footprint"
                             android:textColor="@color/main_text_color"
                             android:textSize="11sp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="?attr/selectableItemBackground"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/footprint_icon_container"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            tools:targetApi="o" />
+                            tools:targetApi="o"/>
 
                         <com.google.android.material.card.MaterialCardView
                             android:id="@+id/footprint_icon_container"
@@ -269,9 +277,9 @@
                                 android:id="@+id/footprint_icon"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:contentDescription="Calculator icon"
                                 android:padding="8dp"
                                 android:src="@drawable/ic_calculator"
-                                android:contentDescription="Calculator icon"
                                 app:tint="@color/white" />
                         </com.google.android.material.card.MaterialCardView>
 
@@ -343,7 +351,6 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Welcome Text Block -->
     <TextView
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"

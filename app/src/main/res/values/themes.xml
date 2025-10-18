@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Retas" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
+    <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/green</item>
         <item name="colorPrimaryVariant">@color/green</item>
         <item name="android:statusBarColor">@color/green</item>
@@ -70,7 +70,5 @@
     <style name="BottomNavTextStyle" parent="TextAppearance.MaterialComponents.Caption">
         <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
-
-
 
 </resources>
