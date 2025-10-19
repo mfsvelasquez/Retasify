@@ -1,0 +1,25 @@
+<?xml version="1.0" e<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/customizeBearFragment">
+
+
+    <fragment
+        android:id="@+id/customizeBearFragment"
+        android:name="com.nepobabies.retas.CustomizeBearFragment"
+        android:label="fragment_customize_bear"
+        tools:layout="@layout/fragment_customize_bear" >
+
+        <action
+            android:id="@+id/action_customizeBearFragment_to_clothesPageFragment"
+            app:destination="@id/clothesPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/clothesPageFragment"
+        android:name="com.nepobabies.retas.ClothesPageFragment"
+        android:label="fragment_clothes_page"
+        tools:layout="@layout/fragment_clothes_page" />
+
+</navigation>
