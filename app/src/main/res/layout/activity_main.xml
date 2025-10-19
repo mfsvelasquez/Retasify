@@ -24,7 +24,7 @@
         android:clipToOutline="true"
         app:itemIconTint="@color/green"
         app:itemTextColor="@color/green"
-        app:itemIconSize="25dp"
+        app:itemIconSize="20dp"
         app:itemActiveIndicatorStyle="@style/App.Custom.Indication"
         app:labelVisibilityMode="labeled"
         app:itemTextAppearanceActive="@style/BottomNavTextStyle"

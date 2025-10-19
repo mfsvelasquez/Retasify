@@ -11,6 +11,7 @@
 
     <style name="App.Custom.Indication" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/yellow</item>
+        <item name="android:height">25dp</item>
     </style>
 
     <!-- Style for the circular profile picture -->

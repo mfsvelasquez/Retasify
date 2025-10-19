@@ -1,7 +1,11 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <solid android:color="@color/white" /> <!-- background color -->
-    <corners android:radius="25dp" /> <!-- adjust roundness -->
+    <corners
+        android:topLeftRadius="25dp"
+        android:topRightRadius="25dp"
+        android:bottomLeftRadius="0dp"
+        android:bottomRightRadius="0dp" />
     <padding
         android:left="4dp"
         android:top="4dp"
