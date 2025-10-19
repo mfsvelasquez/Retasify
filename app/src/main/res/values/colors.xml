@@ -15,4 +15,6 @@
     <color name="dark_green">#5B6E47</color>
     <color name="light_grey">#8A8A8A</color>
     <color name="vibrant_yellow">#F7C44E</color>
+    <color name="hint_text_gray">#C5C5C5</color>
+
 </resources>
