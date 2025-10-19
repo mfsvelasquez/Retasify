@@ -11,7 +11,7 @@
     </item>
 
     <item
-        android:left="dp"
+        android:left="0dp"
         android:top="0dp"
         android:width="140dp"
         android:height="45dp">
