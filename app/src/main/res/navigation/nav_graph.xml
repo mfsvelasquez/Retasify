@@ -22,4 +22,20 @@
         android:label="fragment_clothes_page"
         tools:layout="@layout/fragment_clothes_page" />
 
+    <fragment
+        android:id="@+id/upcycleFragment"
+        android:name="com.nepobabies.retas.UpcycleFragment"
+        android:label="fragment_upcycle"
+        tools:layout="@layout/fragment_upcycle" >
+        <action
+            android:id="@+id/action_upcycleFragment_to_partnerDetailFragment"
+            app:destination="@id/partnerDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/partnerDetailFragment"
+        android:name="com.nepobabies.retas.PartnerDetailFragment"
+        android:label="fragment_partner_detail"
+        tools:layout="@layout/fragment_partner_detail" />
+
 </navigation>

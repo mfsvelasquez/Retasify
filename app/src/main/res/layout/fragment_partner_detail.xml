@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_green"
+    tools:context=".PartnerDetailFragment">
+
+    <ImageButton
+        android:id="@+id/button_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Back"
+        android:src="@drawable/ic_arrow_back"
+        app:tint="@color/white" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        style="@style/TopRoundedCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        app:cardBackgroundColor="#FEF7F1"
+        app:cardElevation="0dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:paddingBottom="100dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/header_logo"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/logo_community"
+                    app:civ_border_color="@color/beige"
+                    app:civ_border_width="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/header_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Scraps for Rags Initiative"
+                    android:textColor="@color/dark_green"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/header_logo"
+                    app:layout_constraintTop_toTopOf="@+id/header_logo"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/header_subtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Siklo Moda PH"
+                    android:textColor="@color/vibrant_yellow"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/header_title"
+                    app:layout_constraintStart_toStartOf="@+id/header_title"
+                    app:layout_constraintTop_toBottomOf="@+id/header_title" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_donate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_button_rounded"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:text="Donate!"
+                    android:textAllCaps="false"
+                    android:textColor="@color/dark_green"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/header_subtitle"
+                    app:layout_constraintTop_toBottomOf="@id/header_subtitle" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/header_text_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="header_title,header_subtitle,button_donate"
+                    app:layout_constraintTop_toTopOf="@id/header_logo"
+                    app:layout_constraintBottom_toBottomOf="@id/header_logo"/>
+
+                <Space
+                    android:id="@+id/spacer"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    app:layout_constraintTop_toBottomOf="@id/header_logo"/>
+
+                <ImageView
+                    android:id="@+id/icon_looking_for"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_search"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spacer"
+                    app:tint="@color/vibrant_yellow" />
+
+                <TextView
+                    android:id="@+id/label_looking_for"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Looking for"
+                    android:textColor="@color/dark_green"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_looking_for"
+                    app:layout_constraintStart_toEndOf="@+id/icon_looking_for"
+                    app:layout_constraintTop_toTopOf="@+id/icon_looking_for" />
+
+                <LinearLayout
+                    android:id="@+id/tags_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_looking_for">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_tag_pill"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="6dp"
+                        android:text="Rags"
+                        android:textColor="@color/dark_green"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_tag_pill"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="6dp"
+                        android:text="Clothes"
+                        android:textColor="@color/dark_green"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_tag_pill"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="6dp"
+                        android:text="Thread"
+                        android:textColor="@color/dark_green"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/icon_details"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/ic_info"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tags_container"
+                    app:tint="@color/vibrant_yellow" />
+
+                <TextView
+                    android:id="@+id/label_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Details"
+                    android:textColor="@color/dark_green"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/icon_details"
+                    app:layout_constraintStart_toEndOf="@+id/icon_details"
+                    app:layout_constraintTop_toTopOf="@+id/icon_details" />
+
+                <TextView
+                    android:id="@+id/text_details_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:lineSpacingExtra="4dp"
+                    android:text="We are launching the &quot;Scraps for Rags&quot; initiative to collect fabric scraps and transform them into rags and essential cloth items for children and families in need. Many in our community, especially those affected by recent hardships, lack basic necessities.\n\nBy repurposing discarded fabrics, we can provide them with much-needed support while reducing textile waste. This project not only helps those in need but also teaches valuable lessons on sustainability and environmental responsibility to the next generation. Every scrap counts—join us in turning what would be waste into something meaningful and beneficial for our children, families, and the planet."
+                    android:textColor="@color/dark_green"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_details" />
+                <!-- "DETAILS" SECTION ENDS HERE -->
+
+                <!-- "CONTACT US" SECTION STARTS HERE -->
+                <TextView
+                    android:id="@+id/label_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Contact us"
+                    android:textColor="@color/dark_green"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_details_content" />
+
+                <!-- Phone -->
+                <ImageView
+                    android:id="@+id/icon_phone"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_phone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_contact"
+                    app:tint="@color/dark_green" />
+
+                <TextView
+                    android:id="@+id/text_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="+63 *** *** ****"
+                    android:textColor="@color/dark_green"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/icon_phone"
+                    app:layout_constraintStart_toEndOf="@id/icon_phone"
+                    app:layout_constraintTop_toTopOf="@id/icon_phone" />
+
+                <!-- Email -->
+                <ImageView
+                    android:id="@+id/icon_email"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/ic_email"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/icon_phone"
+                    app:tint="@color/dark_green" />
+
+                <TextView
+                    android:id="@+id/text_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="lucci.fgl@gmail.com"
+                    android:textColor="@color/dark_green"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/icon_email"
+                    app:layout_constraintStart_toEndOf="@id/icon_email"
+                    app:layout_constraintTop_toTopOf="@id/icon_email" />
+
+                <!-- Facebook -->
+                <ImageView
+                    android:id="@+id/icon_facebook"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/ic_facebook"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/icon_email"
+                    app:tint="@color/dark_green" />
+
+                <TextView
+                    android:id="@+id/text_facebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Ania Luisse"
+                    android:textColor="@color/dark_green"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/icon_facebook"
+                    app:layout_constraintStart_toEndOf="@id/icon_facebook"
+                    app:layout_constraintTop_toTopOf="@id/icon_facebook" />
+                <!-- "CONTACT US" SECTION ENDS HERE -->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
