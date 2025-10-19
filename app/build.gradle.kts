@@ -52,7 +52,9 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.activity:activity-compose:1.9.0") // Use the version from your TOML file
+    implementation("androidx.activity:activity-compose:1.9.0")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx) // Use the version from your TOML file
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
