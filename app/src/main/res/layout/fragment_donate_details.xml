@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    android:padding="16dp"
+    android:id="@+id/fragmentContainer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_box"
+        android:padding="15dp"
+        android:layout_marginVertical="30dp"
+        android:gravity="center_horizontal">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Have extra clothes? Let’s donate it!"
+            android:fontFamily="@font/montserrat_bold"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:paddingBottom="8dp"
+            android:paddingTop="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How’s your clothes doing?"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:paddingBottom="0dp"
+            android:fontFamily="@font/montserrat_regular"/>
+
+        <!-- Selected Emoji Feedback -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="5dp"
+            android:weightSum="4">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:src="@drawable/great"
+                android:contentDescription="Great face"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:src="@drawable/goodgray"
+                android:contentDescription="Good face"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:src="@drawable/notbadgray"
+                android:contentDescription="Not Bad face"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:src="@drawable/sadgray"
+                android:contentDescription="Sad face"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Great! Your pre-loved apparels deserve a new home!"
+            android:fontFamily="@font/montserrat_regular"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Donation Options -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/inner_box"
+            android:padding="16dp"
+            android:gravity="center_horizontal">
+
+            <!-- Donation Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose who will get your donation!"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/montserrat_bold"/>
+
+            <!-- Category Labels -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Local Communities"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat_bold"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Companies"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat_bold"/>
+            </LinearLayout>
+
+            <!-- Grid for Donation Options -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:alignmentMode="alignMargins"
+                android:useDefaultMargins="true"
+                android:rowOrderPreserved="false">
+
+                <!-- Local Communities -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_brown_box"
+                    android:padding="12dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Barangay South Sanitary Camp, Trancoville, Baguio City"
+                        android:textColor="@android:color/white"
+                        android:textSize="13sp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="92dp"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_brown_box"
+                    android:padding="12dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Doofenshmirtz Evil Inc."
+                        android:textColor="@android:color/white"
+                        android:textSize="13sp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_brown_box"
+                    android:padding="12dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Barangay Papsa Kami, Sa Ayaw at Sa Gusto Nyo, Baguio City"
+                        android:textColor="@android:color/white"
+                        android:textSize="13sp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="92dp"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/rounded_brown_box"
+                    android:padding="12dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scraps for Rags Initiative"
+                        android:textColor="@android:color/white"
+                        android:textSize="13sp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+
+            </GridLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

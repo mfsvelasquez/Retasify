@@ -53,7 +53,9 @@
                 android:layout_height="64dp"
                 android:layout_weight="1"
                 android:src="@drawable/great"
-                android:contentDescription="Happy face"/>
+                android:contentDescription="Happy face"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <ImageView
                 android:id="@+id/emojiGood"
@@ -61,7 +63,9 @@
                 android:layout_height="64dp"
                 android:layout_weight="1"
                 android:src="@drawable/good"
-                android:contentDescription="Neutral face"/>
+                android:contentDescription="Neutral face"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <ImageView
                 android:id="@+id/emojiOkay"
@@ -69,7 +73,9 @@
                 android:layout_height="64dp"
                 android:layout_weight="1"
                 android:src="@drawable/notbad"
-                android:contentDescription="Indifferent face"/>
+                android:contentDescription="Indifferent face"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <ImageView
                 android:id="@+id/emojiBad"
@@ -77,7 +83,9 @@
                 android:layout_height="64dp"
                 android:layout_weight="1"
                 android:src="@drawable/sad"
-                android:contentDescription="Sad face"/>
+                android:contentDescription="Sad face"
+                android:clickable="true"
+                android:focusable="true"/>
 
         </LinearLayout>
     </LinearLayout>
