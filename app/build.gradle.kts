@@ -5,9 +5,9 @@ plugins {
 
 android {
     namespace = "com.nepobabies.retas"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
+
+
 
     defaultConfig {
         applicationId = "com.nepobabies.retas"
@@ -38,12 +38,16 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    configurations.all {
+        resolutionStrategy {
+            force("com.google.android.material:material:1.12.0")
+        }
+    }
 }
 
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
@@ -63,18 +67,21 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-    implementation("com.google.android.material:material:1.11.0")
 
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7") // Note: I'm using the latest stable version you have
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
-    implementation("com.google.android.material:material:1.12.0")
+    //implementation("com.google.android.material:material:1.13.0")
 
     implementation("androidx.gridlayout:gridlayout:1.0.0")
 
     implementation("de.hdodenhof:circleimageview:3.1.0")
-
+    implementation(
+        group = "com.google.android.material",
+        name = "material",
+        version = "1.13.0 - 2.0.0-alpha05"
+    )
 
 }

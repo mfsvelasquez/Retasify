@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.nepobabies.retas.DashboardFragment
 import com.nepobabies.retas.R
-
+import android.widget.Toast
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +33,14 @@ class LoginActivity : AppCompatActivity() {
 
             startActivity(intent)
             finish()
+            val text = "Incorrect Password or Email"
+            val duration = Toast.LENGTH_SHORT
+            val toast = Toast.makeText(applicationContext, text, duration)
+            toast.show()
         }
+
+
+
 
         // 🧢 Handle system insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
