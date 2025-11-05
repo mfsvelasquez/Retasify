@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#48583B">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_beige_container"
+            android:elevation="6dp"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Fashion Footprint Calculator"
+                android:textColor="#333333"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- Frequency Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="How often do you buy clothing?"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spinner_frequency"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#CCCCCC" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/slider_frequency"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:stepSize="1"
+                    app:thumbColor="#48583B"
+                    app:trackColor="#CCCCCC"
+                    android:valueFrom="0"
+                    android:valueTo="99" />
+            </LinearLayout>
+
+            <!-- Clothing Category Sliders -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="How many items of clothing do you buy in a year?"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <!-- Tops -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Tops"
+                android:textColor="#333333" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_tops"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                app:thumbColor="#48583B"
+                app:trackColor="#CCCCCC"
+                android:valueFrom="0"
+                android:valueTo="99" />
+
+            <!-- Bottoms -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Bottoms"
+                android:textColor="#333333" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_bottoms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                app:thumbColor="#48583B"
+                app:trackColor="#CCCCCC"
+                android:valueFrom="0"
+                android:valueTo="99" />
+
+            <!-- Outerwear -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Outerwear"
+                android:textColor="#333333" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_outerwear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                app:thumbColor="#48583B"
+                app:trackColor="#CCCCCC"
+                android:valueFrom="0"
+                android:valueTo="99" />
+
+            <!-- Dress -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Dress"
+                android:textColor="#333333" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_dress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stepSize="1"
+                app:thumbColor="#48583B"
+                app:trackColor="#CCCCCC"
+                android:valueFrom = "0"
+                android:valueTo="99" />
+
+            <!-- Calculate Button -->
+            <Button
+                android:id="@+id/button_calculate"
+                android:layout_width="158dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded_calculate_button"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="CALCULATE"
+                android:textColor="#FAF5EF" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
