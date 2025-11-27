@@ -25,22 +25,18 @@ class DonateFragment : Fragment() {
         val gotodonatedetails = Intent(activity, DonateDetails::class.java)
 
         emojiGreat.setOnClickListener {
-            Toast.makeText(requireContext(), "You selected the great face!", Toast.LENGTH_SHORT).show()
             startActivity(gotodonatedetails)
         }
 
         emojiGood.setOnClickListener {
-            Toast.makeText(requireContext(), "You selected the good face!", Toast.LENGTH_SHORT).show()
             startActivity(gotodonatedetails)
         }
 
         emojiOkay.setOnClickListener {
-            Toast.makeText(requireContext(), "You selected the not bad face!", Toast.LENGTH_SHORT).show()
             startActivity(gotodonatedetails)
         }
 
         emojiBad.setOnClickListener {
-            Toast.makeText(requireContext(), "You selected the bad face!", Toast.LENGTH_SHORT).show()
             startActivity(gotodonatedetails)
         }
 
