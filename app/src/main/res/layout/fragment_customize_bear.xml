@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FEF7F1"
-    tools:context=".CustomizeBearFragment">
+    tools:context=".ui.bear.CustomizeBearFragment">
 
     <ImageButton
         android:id="@+id/button_back"
@@ -33,68 +33,307 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button_back" />
 
-    <ImageView
-        android:id="@+id/image_bear"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/retaso_bear"
+    <!-- Bear Image Container - Drop Target -->
+    <FrameLayout
+        android:id="@+id/bear_container"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_dress_a_bear"
-        tools:src="@drawable/retaso_bear" />
+        app:layout_constraintTop_toBottomOf="@id/title_dress_a_bear">
 
-    <FrameLayout
+        <!-- Base Bear Image -->
+        <ImageView
+            android:id="@+id/image_bear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/retaso_bear"
+            android:scaleType="fitCenter" />
+
+        <!-- Overlay for bottom (shorts/skirt) - drawn first (behind) -->
+        <ImageView
+            android:id="@+id/overlay_bottom"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="168dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+        <!-- Overlay for shirt - drawn second (middle layer) -->
+        <ImageView
+            android:id="@+id/overlay_shirt"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="105dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+        <!-- Overlay for scarf - drawn last (on top) -->
+        <ImageView
+            android:id="@+id/overlay_scarf"
+            android:layout_width="115dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="88dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+    <!-- Adjustment Controls Container -->
+    <LinearLayout
+        android:id="@+id/adjustment_controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bear_container">
+
+        <!-- Label showing what's selected -->
+        <TextView
+            android:id="@+id/adjustment_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Adjust Scarf"
+            android:textColor="#48583B"
+            android:textSize="14sp" />
+
+        <!-- Position and Size Controls Row -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="4dp">
+
+            <!-- Position Controls (D-Pad style) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Up Button -->
+                <ImageButton
+                    android:id="@+id/btn_move_up"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_tab_selected"
+                    android:src="@android:drawable/arrow_up_float"
+                    android:contentDescription="Move up"
+                    android:scaleType="centerInside"
+                    app:tint="@color/white" />
+
+                <!-- Left and Right in a row -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/btn_move_left"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_tab_selected"
+                        android:rotation="270"
+                        android:src="@android:drawable/arrow_up_float"
+                        android:contentDescription="Move left"
+                        android:scaleType="centerInside"
+                        app:tint="@color/white" />
+
+                    <View
+                        android:layout_width="32dp"
+                        android:layout_height="32dp" />
+
+                    <ImageButton
+                        android:id="@+id/btn_move_right"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_tab_selected"
+                        android:rotation="90"
+                        android:src="@android:drawable/arrow_up_float"
+                        android:contentDescription="Move right"
+                        android:scaleType="centerInside"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+                <!-- Down Button -->
+                <ImageButton
+                    android:id="@+id/btn_move_down"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_tab_selected"
+                    android:rotation="180"
+                    android:src="@android:drawable/arrow_up_float"
+                    android:contentDescription="Move down"
+                    android:scaleType="centerInside"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="24dp"
+                android:layout_height="1dp" />
+
+            <!-- Size Controls -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Size"
+                    android:textColor="#48583B"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/montserrat_regular" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp">
+
+                    <ImageButton
+                        android:id="@+id/btn_size_down"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_tab_selected"
+                        android:src="@android:drawable/btn_minus"
+                        android:contentDescription="Decrease size"
+                        app:tint="@color/white" />
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="1dp" />
+
+                    <ImageButton
+                        android:id="@+id/btn_size_up"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_tab_selected"
+                        android:src="@android:drawable/btn_plus"
+                        android:contentDescription="Increase size"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Drop instruction text -->
+    <TextView
+        android:id="@+id/drop_instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="Tap clothing on bear to adjust!"
+        android:textColor="#48583B"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adjustment_controls" />
+
+    <!-- Category Tabs Container -->
+    <LinearLayout
         android:id="@+id/folder_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/bg_folder_tabs"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_bear">
+        app:layout_constraintTop_toBottomOf="@id/drop_instruction">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_clothing"
+        <!-- Folder Tabs Row -->
+        <LinearLayout
+            android:id="@+id/tabs_row"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="48dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:padding="8dp"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="3"
-            tools:itemCount="1"
-            tools:listitem="@layout/item_clothing_choice" />
-
-        <ImageView
-            android:id="@+id/icon_clothes"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="top|start"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="7dp"
-            android:elevation="7dp"
-            android:src="@drawable/ic_clothes_icon"
-            app:tint="@color/white" />
-
-        <TextView
-            android:id="@+id/text_clothes"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|start"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="5dp"
-            android:elevation="7dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="Clothes"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:orientation="horizontal">
 
-    </FrameLayout>
+            <TextView
+                android:id="@+id/tab_scarves"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Scarves"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:background="@drawable/bg_tab_selected" />
+
+            <TextView
+                android:id="@+id/tab_shirts"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Shirts"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:background="@drawable/bg_tab_unselected" />
+
+            <TextView
+                android:id="@+id/tab_bottoms"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Bottoms"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:background="@drawable/bg_tab_unselected" />
+
+        </LinearLayout>
+
+        <!-- Content Area -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#48583B">
+
+            <!-- RecyclerView for clothing items -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_clothing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="8dp"
+                android:clipToPadding="false"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_clothing_choice" />
+
+        </FrameLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

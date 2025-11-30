@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet"
+    android:paddingBottom="32dp">
+
+    <!-- Drag Handle -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_drag_handle" />
+
+    <!-- Header with Logo and Title -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/partner_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo_community"
+            app:shapeAppearanceOverlay="@style/CircleImageView"
+            app:strokeColor="@color/dark_green"
+            app:strokeWidth="2dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/partner_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scraps for Rags Initiative"
+                android:textColor="@color/dark_green"
+                android:textSize="20sp"
+                android:fontFamily="@font/montserrat_bold" />
+
+            <TextView
+                android:id="@+id/partner_tagline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Siklo Moda PH"
+                android:textColor="@color/yellow"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_regular" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_donate"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:text="Donate!"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat_bold"
+                app:backgroundTint="@color/yellow"
+                app:cornerRadius="18dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Looking For Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_search"
+                app:tint="@color/dark_green" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Looking for"
+                android:textColor="@color/dark_green"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_bold" />
+
+        </LinearLayout>
+
+        <!-- Partner Logos Row -->
+        <LinearLayout
+            android:id="@+id/looking_for_logos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/logo_kultura"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo_kultura"
+                app:shapeAppearanceOverlay="@style/CircleImageView"
+                app:strokeColor="@color/dark_green"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/logo_community"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="16dp"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo_community"
+                app:shapeAppearanceOverlay="@style/CircleImageView"
+                app:strokeColor="@color/dark_green"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/logo_good_neighbors"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="16dp"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo_good_neighbors"
+                app:shapeAppearanceOverlay="@style/CircleImageView"
+                app:strokeColor="@color/dark_green"
+                app:strokeWidth="1dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Details Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_dialog_info"
+                app:tint="@color/yellow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Details"
+                android:textColor="@color/dark_green"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/partner_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We are launching the 'Scraps for Rags' initiative to collect fabric scraps and transform them into rags and essential cloth items for children and families in need.\n\nBy repurposing discarded fabrics, we can provide them with much-needed support while reducing textile waste."
+            android:textColor="@color/dark_green"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat_regular"
+            android:lineSpacingMultiplier="1.3"
+            android:justificationMode="inter_word" />
+
+    </LinearLayout>
+
+    <!-- Contact Us Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact us"
+            android:textColor="@color/dark_green"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Phone -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_call"
+                app:tint="@color/dark_green" />
+
+            <TextView
+                android:id="@+id/partner_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="+63 *** *** ****"
+                android:textColor="@color/dark_green"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_regular" />
+
+        </LinearLayout>
+
+        <!-- Email -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/sym_action_email"
+                app:tint="@color/dark_green" />
+
+            <TextView
+                android:id="@+id/partner_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="partner@gmail.com"
+                android:textColor="@color/dark_green"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_regular" />
+
+        </LinearLayout>
+
+        <!-- Facebook -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_facebook"
+                app:tint="@color/dark_green" />
+
+            <TextView
+                android:id="@+id/partner_facebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Partner Name"
+                android:textColor="@color/dark_green"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_regular" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Other Posts Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_gallery"
+                app:tint="@color/yellow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Other Posts"
+                android:textColor="@color/dark_green"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                android:fontFamily="@font/montserrat_bold" />
+
+        </LinearLayout>
+
+        <!-- Posts Grid -->
+        <LinearLayout
+            android:id="@+id/posts_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/post_image_1"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_post_image" />
+
+            <ImageView
+                android:id="@+id/post_image_2"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_post_image" />
+
+            <ImageView
+                android:id="@+id/post_image_3"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_post_image" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

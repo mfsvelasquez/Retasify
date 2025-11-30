@@ -13,38 +13,46 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Retas"
         tools:targetApi="31">
+
+        <!-- Splash Screen (Launcher) -->
         <activity
-            android:name=".DonateDetails"
-            android:exported="false" />
-        <activity
-            android:name=".UpcycleActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DressABearActivity"
-            android:exported="false" /> <!-- Splash screen is now the launcher -->
-        <activity
-            android:name=".SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Other activities -->
+        </activity>
+
+        <!-- Auth Flow -->
         <activity
-            android:name=".AuthActivity"
+            android:name=".ui.auth.AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.auth.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".ui.auth.SignUpActivity"
+            android:exported="false" />
+
+        <!-- Main App -->
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="false" />
+
+        <!-- Donate Feature -->
+        <activity
+            android:name=".ui.donate.DonateDetailsActivity"
+            android:exported="false" />
+
+        <!-- Calculator Feature -->
+        <activity
+            android:name=".ui.calculator.FashionCalculatorActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.calculator.ResultActivity"
             android:exported="false" />
-        <activity android:name=".FashionCalculatorActivity" />
-        <activity android:name=".ResultActivity" />
+
     </application>
 
 </manifest>

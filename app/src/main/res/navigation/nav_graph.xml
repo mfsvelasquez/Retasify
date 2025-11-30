@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/customizeBearFragment">
 
-
+    <!-- Bear Customization Flow -->
     <fragment
         android:id="@+id/customizeBearFragment"
-        android:name="com.nepobabies.retas.CustomizeBearFragment"
+        android:name="com.nepobabies.retas.ui.bear.CustomizeBearFragment"
         android:label="fragment_customize_bear"
-        tools:layout="@layout/fragment_customize_bear" >
+        tools:layout="@layout/fragment_customize_bear">
 
         <action
             android:id="@+id/action_customizeBearFragment_to_clothesPageFragment"
@@ -18,15 +19,16 @@
 
     <fragment
         android:id="@+id/clothesPageFragment"
-        android:name="com.nepobabies.retas.ClothesPageFragment"
+        android:name="com.nepobabies.retas.ui.bear.ClothesPageFragment"
         android:label="fragment_clothes_page"
         tools:layout="@layout/fragment_clothes_page" />
 
+    <!-- Upcycle Flow -->
     <fragment
         android:id="@+id/upcycleFragment"
-        android:name="com.nepobabies.retas.UpcycleFragment"
+        android:name="com.nepobabies.retas.ui.upcycle.UpcycleFragment"
         android:label="fragment_upcycle"
-        tools:layout="@layout/fragment_upcycle" >
+        tools:layout="@layout/fragment_upcycle">
         <action
             android:id="@+id/action_upcycleFragment_to_partnerDetailFragment"
             app:destination="@id/partnerDetailFragment" />
@@ -34,7 +36,7 @@
 
     <fragment
         android:id="@+id/partnerDetailFragment"
-        android:name="com.nepobabies.retas.PartnerDetailFragment"
+        android:name="com.nepobabies.retas.ui.upcycle.PartnerDetailFragment"
         android:label="fragment_partner_detail"
         tools:layout="@layout/fragment_partner_detail" />
 

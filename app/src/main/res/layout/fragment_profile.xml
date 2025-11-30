@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="#FAF5EF"
     android:fillViewport="true"
+    android:paddingBottom="80dp"
     tools:context=".ProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -239,7 +240,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="64dp"
+            android:layout_marginBottom="24dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
