@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fashion Footprint</string>
+    <string name="app_name">Retasify</string>
     <string-array name="frequency_options">
         <item>Per Week</item>
         <item>Per Month</item>
