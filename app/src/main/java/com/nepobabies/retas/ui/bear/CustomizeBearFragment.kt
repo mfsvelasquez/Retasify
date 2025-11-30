@@ -8,10 +8,15 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nepobabies.retas.R
+import com.nepobabies.retas.data.local.BearCustomizationEntity
+import com.nepobabies.retas.data.repository.BearCustomizationRepository
+import kotlinx.coroutines.launch
 
 class CustomizeBearFragment : Fragment(R.layout.fragment_customize_bear) {
 
@@ -36,6 +41,13 @@ class CustomizeBearFragment : Fragment(R.layout.fragment_customize_bear) {
     private lateinit var btnMoveDown: ImageButton
     private lateinit var btnMoveLeft: ImageButton
     private lateinit var btnMoveRight: ImageButton
+    
+    // Save/Reset buttons
+    private lateinit var btnSave: ImageButton
+    private lateinit var btnReset: ImageButton
+    
+    // Repository for database operations
+    private lateinit var repository: BearCustomizationRepository
     
     private var currentCategory = ClothingCategory.SCARF
     
@@ -66,13 +78,20 @@ class CustomizeBearFragment : Fragment(R.layout.fragment_customize_bear) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
+        // Initialize repository
+        repository = BearCustomizationRepository.getInstance(requireContext())
+        
         initViews(view)
         setupBackButton(view)
+        setupSaveResetButtons(view)
         setupTabs()
         setupRecyclerView()
         setupDragAndDrop()
         setupAdjustmentControls()
         setupOverlayClickListeners()
+        
+        // Load saved customization
+        loadSavedCustomization()
         
         // Show scarves by default
         showCategory(ClothingCategory.SCARF)
@@ -97,11 +116,159 @@ class CustomizeBearFragment : Fragment(R.layout.fragment_customize_bear) {
         btnMoveDown = view.findViewById(R.id.btn_move_down)
         btnMoveLeft = view.findViewById(R.id.btn_move_left)
         btnMoveRight = view.findViewById(R.id.btn_move_right)
+        
+        // Save/Reset buttons
+        btnSave = view.findViewById(R.id.button_save)
+        btnReset = view.findViewById(R.id.button_reset)
     }
 
     private fun setupBackButton(view: View) {
         view.findViewById<ImageButton>(R.id.button_back)?.setOnClickListener {
             parentFragmentManager.popBackStack()
+        }
+    }
+    
+    private fun setupSaveResetButtons(view: View) {
+        btnSave.setOnClickListener {
+            saveBearCustomization()
+        }
+        
+        btnReset.setOnClickListener {
+            resetBearCustomization()
+        }
+    }
+    
+    private fun loadSavedCustomization() {
+        lifecycleScope.launch {
+            val customization = repository.getBearCustomization()
+            customization?.let { saved ->
+                // Restore scarf
+                saved.scarfId?.let { scarfId ->
+                    val scarf = ClothingItemsProvider.getAllClothingItems().find { it.id == scarfId }
+                    scarf?.let {
+                        selectedScarf = it
+                        overlayScarf.setImageResource(it.drawableResId)
+                        overlayScarf.visibility = View.VISIBLE
+                    }
+                }
+                
+                // Restore shirt
+                saved.shirtId?.let { shirtId ->
+                    val shirt = ClothingItemsProvider.getAllClothingItems().find { it.id == shirtId }
+                    shirt?.let {
+                        selectedShirt = it
+                        overlayShirt.setImageResource(it.drawableResId)
+                        overlayShirt.visibility = View.VISIBLE
+                    }
+                }
+                
+                // Restore bottom
+                saved.bottomId?.let { bottomId ->
+                    val bottom = ClothingItemsProvider.getAllClothingItems().find { it.id == bottomId }
+                    bottom?.let {
+                        selectedBottom = it
+                        overlayBottom.setImageResource(it.drawableResId)
+                        overlayBottom.visibility = View.VISIBLE
+                    }
+                }
+                
+                // Restore scale factors
+                scarfScale = saved.scarfScale
+                shirtScale = saved.shirtScale
+                bottomScale = saved.bottomScale
+                
+                overlayScarf.scaleX = scarfScale
+                overlayScarf.scaleY = scarfScale
+                overlayShirt.scaleX = shirtScale
+                overlayShirt.scaleY = shirtScale
+                overlayBottom.scaleX = bottomScale
+                overlayBottom.scaleY = bottomScale
+                
+                // Restore position offsets
+                scarfOffsetX = saved.scarfOffsetX
+                scarfOffsetY = saved.scarfOffsetY
+                shirtOffsetX = saved.shirtOffsetX
+                shirtOffsetY = saved.shirtOffsetY
+                bottomOffsetX = saved.bottomOffsetX
+                bottomOffsetY = saved.bottomOffsetY
+                
+                overlayScarf.translationX = scarfOffsetX
+                overlayScarf.translationY = scarfOffsetY
+                overlayShirt.translationX = shirtOffsetX
+                overlayShirt.translationY = shirtOffsetY
+                overlayBottom.translationX = bottomOffsetX
+                overlayBottom.translationY = bottomOffsetY
+            }
+        }
+    }
+    
+    private fun saveBearCustomization() {
+        lifecycleScope.launch {
+            val customization = BearCustomizationEntity(
+                id = 1,
+                scarfId = selectedScarf?.id,
+                shirtId = selectedShirt?.id,
+                bottomId = selectedBottom?.id,
+                scarfScale = scarfScale,
+                shirtScale = shirtScale,
+                bottomScale = bottomScale,
+                scarfOffsetX = scarfOffsetX,
+                scarfOffsetY = scarfOffsetY,
+                shirtOffsetX = shirtOffsetX,
+                shirtOffsetY = shirtOffsetY,
+                bottomOffsetX = bottomOffsetX,
+                bottomOffsetY = bottomOffsetY
+            )
+            repository.saveBearCustomization(customization)
+            Toast.makeText(requireContext(), "Bear outfit saved!", Toast.LENGTH_SHORT).show()
+        }
+    }
+    
+    private fun resetBearCustomization() {
+        lifecycleScope.launch {
+            repository.resetBearCustomization()
+            
+            // Reset UI
+            selectedScarf = null
+            selectedShirt = null
+            selectedBottom = null
+            
+            overlayScarf.visibility = View.GONE
+            overlayShirt.visibility = View.GONE
+            overlayBottom.visibility = View.GONE
+            
+            // Reset scales
+            scarfScale = 1.0f
+            shirtScale = 1.0f
+            bottomScale = 1.0f
+            
+            overlayScarf.scaleX = 1.0f
+            overlayScarf.scaleY = 1.0f
+            overlayShirt.scaleX = 1.0f
+            overlayShirt.scaleY = 1.0f
+            overlayBottom.scaleX = 1.0f
+            overlayBottom.scaleY = 1.0f
+            
+            // Reset positions
+            scarfOffsetX = 0f
+            scarfOffsetY = 0f
+            shirtOffsetX = 0f
+            shirtOffsetY = 0f
+            bottomOffsetX = 0f
+            bottomOffsetY = 0f
+            
+            overlayScarf.translationX = 0f
+            overlayScarf.translationY = 0f
+            overlayShirt.translationX = 0f
+            overlayShirt.translationY = 0f
+            overlayBottom.translationX = 0f
+            overlayBottom.translationY = 0f
+            
+            // Hide adjustment controls
+            adjustmentControls.visibility = View.GONE
+            selectedOverlay = null
+            
+            Toast.makeText(requireContext(), "Bear outfit reset!", Toast.LENGTH_SHORT).show()
         }
     }
 

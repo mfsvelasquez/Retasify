@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.slider.Slider
@@ -15,7 +16,14 @@ class FashionCalculatorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
 
+        setupBackButton()
         setupUI()
+    }
+
+    private fun setupBackButton() {
+        findViewById<ImageButton>(R.id.backButton).setOnClickListener {
+            finish()
+        }
     }
 
     private fun setupUI() {

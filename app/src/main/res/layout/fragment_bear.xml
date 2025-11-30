@@ -20,17 +20,55 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/bear_image_view"
+    <!-- Bear Container with overlays -->
+    <FrameLayout
+        android:id="@+id/bear_container"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="A cute bear named Retaso"
-        android:src="@drawable/retaso_bear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_dress_a_bear" />
+        app:layout_constraintTop_toBottomOf="@+id/title_dress_a_bear">
+
+        <ImageView
+            android:id="@+id/bear_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="A cute bear named Retaso"
+            android:src="@drawable/retaso_bear" />
+
+        <!-- Overlay for bottom (shorts/skirt) - drawn first (behind) -->
+        <ImageView
+            android:id="@+id/overlay_bottom"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="168dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+        <!-- Overlay for shirt - drawn second (middle layer) -->
+        <ImageView
+            android:id="@+id/overlay_shirt"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="105dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+        <!-- Overlay for scarf - drawn last (on top) -->
+        <ImageView
+            android:id="@+id/overlay_scarf"
+            android:layout_width="115dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="88dp"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/bear_name_layout"
@@ -41,7 +79,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bear_image_view">
+        app:layout_constraintTop_toBottomOf="@+id/bear_container">
 
         <TextView
             android:id="@+id/bear_name_text"

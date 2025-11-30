@@ -91,26 +91,32 @@
                     app:layout_constraintTop_toBottomOf="@+id/title_local_communities">
 
                     <ImageView
+                        android:id="@+id/logo_community_1"
                         style="@style/PartnerLogo"
                         android:src="@drawable/logo_community" />
 
                     <ImageView
+                        android:id="@+id/logo_good_neighbors_1"
                         style="@style/PartnerLogo"
                         android:src="@drawable/logo_good_neighbors" />
 
                     <ImageView
+                        android:id="@+id/logo_kultura_1"
                         style="@style/PartnerLogo"
                         android:src="@drawable/logo_kultura" />
 
                     <ImageView
+                        android:id="@+id/logo_community_2"
                         style="@style/PartnerLogo"
                         android:src="@drawable/logo_community" />
 
                     <ImageView
+                        android:id="@+id/logo_good_neighbors_2"
                         style="@style/PartnerLogo"
                         android:src="@drawable/logo_good_neighbors" />
 
                     <ImageView
+                        android:id="@+id/logo_kultura_2"
                         style="@style/PartnerLogo"
                         android:src="@drawable/logo_kultura" />
                 </GridLayout>
@@ -154,14 +160,17 @@
                     app:layout_constraintTop_toBottomOf="@+id/title_companies">
 
                     <ImageView
+                        android:id="@+id/logo_candle"
                         style="@style/PartnerLogo"
                         android:src="@drawable/logo_candle" />
 
                     <ImageView
+                        android:id="@+id/logo_muni"
                         style="@style/PartnerLogo"
                         android:src="@drawable/logo_muni" />
 
                     <ImageView
+                        android:id="@+id/logo_maison"
                         style="@style/PartnerLogo"
                         android:src="@drawable/logo_maison" />
 

@@ -3,6 +3,7 @@ package com.nepobabies.retas.ui.auth
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
@@ -15,6 +16,7 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var passwordEditText: EditText
     private lateinit var confirmPasswordEditText: EditText
     private lateinit var signUpButton: MaterialButton
+    private lateinit var backButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +31,14 @@ class SignUpActivity : AppCompatActivity() {
         passwordEditText = findViewById(R.id.passwordEditText)
         confirmPasswordEditText = findViewById(R.id.confirmPasswordEditText)
         signUpButton = findViewById(R.id.signUpButton)
+        backButton = findViewById(R.id.backButton)
     }
 
     private fun setupClickListeners() {
+        backButton.setOnClickListener {
+            finish()
+        }
+
         signUpButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
             val password = passwordEditText.text.toString().trim()

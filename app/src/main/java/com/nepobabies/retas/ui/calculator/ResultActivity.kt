@@ -1,6 +1,7 @@
 package com.nepobabies.retas.ui.calculator
 
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +14,14 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
+        setupBackButton()
         calculateAndDisplayResult()
+    }
+
+    private fun setupBackButton() {
+        findViewById<ImageButton>(R.id.backButton).setOnClickListener {
+            finish()
+        }
     }
 
     private fun calculateAndDisplayResult() {

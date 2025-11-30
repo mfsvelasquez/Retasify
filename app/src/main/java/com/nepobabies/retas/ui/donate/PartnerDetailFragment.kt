@@ -91,6 +91,33 @@ class PartnerDetailFragment : Fragment() {
                 partnerEmail.text = "ph@goodneighbors.org"
                 partnerFacebook.text = "Good Neighbors Philippines"
             }
+            PARTNER_CANDLE -> {
+                partnerLogo.setImageResource(R.drawable.logo_candle)
+                partnerName.text = "Candle Upcycle Studio"
+                partnerTagline.text = "Light Up Sustainability"
+                partnerDetails.text = "Candle Upcycle Studio transforms old fabrics into beautiful, eco-friendly products. We specialize in creating unique home décor items and accessories from donated textiles.\n\nYour fabric donations help us reduce waste while creating employment opportunities for local artisans."
+                partnerPhone.text = "+63 920 456 7890"
+                partnerEmail.text = "hello@candleupcycle.ph"
+                partnerFacebook.text = "Candle Upcycle Studio"
+            }
+            PARTNER_MUNI -> {
+                partnerLogo.setImageResource(R.drawable.logo_muni)
+                partnerName.text = "Muni Sustainable Fashion"
+                partnerTagline.text = "Fashion Forward, Earth First"
+                partnerDetails.text = "Muni is a sustainable fashion brand that upcycles pre-loved clothing into trendy, one-of-a-kind pieces. We believe in giving every garment a second life.\n\nDonate your old clothes and we'll transform them into stylish new items while minimizing environmental impact."
+                partnerPhone.text = "+63 921 567 8901"
+                partnerEmail.text = "info@munifashion.ph"
+                partnerFacebook.text = "Muni Sustainable Fashion"
+            }
+            PARTNER_MAISON -> {
+                partnerLogo.setImageResource(R.drawable.logo_maison)
+                partnerName.text = "Maison Textile Collective"
+                partnerTagline.text = "Weaving Communities Together"
+                partnerDetails.text = "Maison Textile Collective is a social enterprise that collects fabric donations and partners with local weavers and seamstresses to create sustainable fashion products.\n\nYour donations directly support livelihood programs for marginalized communities while promoting sustainable fashion practices."
+                partnerPhone.text = "+63 922 678 9012"
+                partnerEmail.text = "contact@maisontextile.ph"
+                partnerFacebook.text = "Maison Textile Collective"
+            }
             else -> {
                 // Default/fallback data
                 partnerName.text = "Donation Partner"
@@ -113,6 +140,9 @@ class PartnerDetailFragment : Fragment() {
         const val PARTNER_KULTURA = "kultura"
         const val PARTNER_COMMUNITY = "community"
         const val PARTNER_GOOD_NEIGHBORS = "good_neighbors"
+        const val PARTNER_CANDLE = "candle"
+        const val PARTNER_MUNI = "muni"
+        const val PARTNER_MAISON = "maison"
 
         fun newInstance(partnerId: String): PartnerDetailFragment {
             return PartnerDetailFragment().apply {
