@@ -52,11 +52,6 @@
         <activity
             android:name=".ui.calculator.ResultActivity"
             android:exported="false" />
-<<<<<<< HEAD
-
-=======
-        <activity android:name=".ResultActivity" />
->>>>>>> c3742fea21f65b41ff228c29ab08b043c898c607
     </application>
 
 </manifest>
