@@ -80,6 +80,7 @@
             android:layout_height="wrap_content"
             android:text="GREAT! That's likely you"
             android:fontFamily="@font/montserrat_regular"
+            android:textAlignment="center"
             android:textSize="16sp"
             android:textColor="#48583B"
             android:layout_gravity="center" />
