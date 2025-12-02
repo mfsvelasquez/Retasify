@@ -2,12 +2,12 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
     namespace = "com.nepobabies.retas"
     compileSdk = 36
-
 
 
     defaultConfig {
@@ -60,6 +60,8 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.9.0")
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -92,5 +94,9 @@ dependencies {
         name = "material",
         version = "1.13.0 - 2.0.0-alpha05"
     )
+
+    // Import the Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:34.6.0"))
+    implementation("com.squareup.picasso:picasso:2.71828")
 
 }

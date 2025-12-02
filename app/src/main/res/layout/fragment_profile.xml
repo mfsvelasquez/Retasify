@@ -12,26 +12,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- Login Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signOutButton"
+            android:layout_width="110dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="#FFC107"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:cornerRadius="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Changed android:src to tools:src -->
+
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profile_image"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="60dp"
             android:padding="4dp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/CircleImageView"
             app:strokeColor="@color/main_text_color"
             app:strokeWidth="2dp"
             tools:src="@tools:sample/avatars" />
-        <!-- Changed android:src to tools:src -->
 
         <TextView
             android:id="@+id/profile_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/montserrat_bold"
             android:text="Lucci Fagela"

@@ -12,7 +12,20 @@
           "package_name": "com.nepobabies.retas"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "869692795690-apg3vh9tiupmhmgjls64uncolp1ptda0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nepobabies.retas",
+            "certificate_hash": "23e82d28a22de91187e9b88964ca7807b07a846c"
+          }
+        },
+        {
+          "client_id": "869692795690-hg71aui2586ibm2hansl5qj3mppohsd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyB3KiXbYruCOez9EoHs3eUyIpM8lpjcmBM"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869692795690-hg71aui2586ibm2hansl5qj3mppohsd8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
