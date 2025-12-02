@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "869692795690",
+    "project_id": "retasify-800d3",
+    "storage_bucket": "retasify-800d3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869692795690:android:1e2de628bb1325bf5a8c53",
+        "android_client_info": {
+          "package_name": "com.nepobabies.retas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3KiXbYruCOez9EoHs3eUyIpM8lpjcmBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -62,7 +62,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun performLogin(email: String, password: String) {
         // TODO: Implement Firebase Authentication here
-        // For now, placeholder navigation to MainActivity
+
         Toast.makeText(this, "Login successful (placeholder)", Toast.LENGTH_SHORT).show()
         startActivity(Intent(this, MainActivity::class.java))
         finish()
